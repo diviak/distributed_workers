@@ -16,6 +16,11 @@ class WorkerCommand extends Command
 
         do {
             $row = executeJob($pdo);
+
+            if (!empty($row)) {
+                $output->writeln(sprintf('Job for site `%s` executed', $row['url']));
+            }
+
         } while (!empty($row));
 
         return Command::SUCCESS;
