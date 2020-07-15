@@ -1,0 +1,40 @@
+version: '3.3'
+
+volumes:
+  mysql:
+    driver: local
+
+services:
+
+  mysql:
+    build:
+      context: ./docker/mysql
+    image: mysql
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - 3306:3306
+    networks:
+      default:
+        aliases:
+          - database_host
+    volumes:
+        - mysql:/var/lib/mysql
+
+  adminer:
+    build:
+      context: ./docker/adminer
+    image: adminer
+    container_name: adminer
+    ports:
+      - 3307:80
+
+  php:
+    build:
+      context: ./docker/php
+    image: php
+    container_name: php
+    volumes:
+      - ./app:/var/www/html:rw
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa

@@ -1,0 +1,19 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "brianium/paratest": "^4.1"
+    },
+    "require": {
+        "symfony/console": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "": ["project/"]
+        },
+        "files": [
+            "project/functions/database.php",
+            "project/functions/functions.php",
+            "project/functions/helpers.php"
+        ]
+    }
+}
