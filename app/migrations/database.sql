@@ -17,3 +17,5 @@ CREATE TABLE `sites` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE USER 'distributed_worker'@'%' IDENTIFIED BY 'secret';
+GRANT ALL PRIVILEGES ON `distributed\_worker`.* TO 'distributed_worker'@'%';
