@@ -1,10 +1,10 @@
-###About
+### About
 
 I was trying to keep it simple as possible and used just simple PDO for it instead of e.g. doctrine. I hope that installation process will work for you.
 
 I did use `SKIP LOCKED` feature introduced in MySQL v8.0.1
 
-###Installation 
+### Installation 
 
 **Docker**
 
